@@ -3,6 +3,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { BaseHomeButton } from "./BaseHomeButton";
 import { BaseHomeButtonPlaceholder } from "./BaseHomeButtonPlaceholder";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -18,6 +19,7 @@ const useStyles = makeStyles({
 
 export const BaseHomeButtonRow = () => {
   const classes = useStyles();
+  let history = useHistory();
   return (
     <div className={classes.root}>
       <BaseHomeButtonPlaceholder
@@ -27,6 +29,9 @@ export const BaseHomeButtonRow = () => {
       <BaseHomeButton
         label="Health Declaration"
         imgSrc="/images/baseButton-declare.jpg"
+        onClick={() => {
+          history.push("/declaration-a");
+        }}
       />
       <BaseHomeButtonPlaceholder
         label="NUSafe"

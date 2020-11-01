@@ -9,7 +9,6 @@ import { Home, Explore, Settings } from "@material-ui/icons";
 import { BaseHomeButtonRow } from "../../components/BaseHomeButtonRow";
 
 export const HomePageA = () => {
-  const [bottomIndex, setBottomIndex] = useState(0);
   return (
     <React.Fragment>
       <Container
@@ -85,7 +84,7 @@ export const HomePageA = () => {
       <Container maxWidth="xs" disableGutters component="div">
         <BottomNavigation
           style={{ bottom: "0", backgroundColor: "#fafafa" }}
-          value={bottomIndex}
+          value={0}
           showLabels
           //   onChange={(event, newValue) => setBottomIndex(newValue)}
         >

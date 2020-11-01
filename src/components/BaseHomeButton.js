@@ -25,12 +25,12 @@ const useStyles = makeStyles({
   },
 });
 
-export const BaseHomeButton = ({ label, imgSrc }) => {
+export const BaseHomeButton = ({ label, imgSrc, onClick }) => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <ButtonBase>
+      <ButtonBase onClick={() => onClick()}>
         <Box borderRadius={12} bgcolor="#ffffff" width={64} height={64} p={0.5}>
           <img
             className={classes.image}
