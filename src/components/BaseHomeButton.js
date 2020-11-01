@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "center",
-    margin: "1rem 0.5rem",
+    margin: "1rem 1rem",
   },
   label: {
     color: "#ffffff",
