@@ -27,7 +27,7 @@ const useStyles = makeStyles({
     padding: "1rem",
   },
   card: {
-    margin: "0 1rem",
+    margin: "0 1rem 1rem",
     minHeight: "400px",
   },
 });

@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
+  Button,
   FormControl,
   FormControlLabel,
   Grid,
+  Input,
   InputLabel,
   MenuItem,
   Radio,
   RadioGroup,
   Select,
+  Slider,
   Typography,
 } from "@material-ui/core";
 import { format } from "date-fns";
-import { InfoOutlined } from "@material-ui/icons";
+import { InfoOutlined, MicNone } from "@material-ui/icons";
 
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
@@ -38,11 +41,42 @@ const useStyles = makeStyles({
   disclaimer: {
     flex: 1,
   },
+  tempValue: {
+    flex: 1,
+    margin: "0 2rem 0 3rem",
+  },
+  mic: {
+    flex: 1,
+    margin: "0 2rem",
+  },
+  margins: {
+    margin: "1rem 0",
+  },
+  swipe: {
+    width: "48px",
+    height: "auto",
+  },
+  button: {
+    backgroundColor: "#002984",
+    color: "#ffffff",
+  },
+  centered: {
+    width: "100%",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });
 
 export const DeclarationFormA = () => {
   const classes = useStyles();
   const currentDate = format(new Date(), "dd/MM/yyyy, EEEE");
+  const [time, setTime] = useState("");
+  const [symptoms, setSymptoms] = useState("");
+  const [household, setHousehold] = useState("");
+  const [temperature, setTemparature] = useState("");
+
   return (
     <React.Fragment>
       <Typography align="left">
@@ -72,8 +106,10 @@ export const DeclarationFormA = () => {
           <Typography variant="body2">Date:</Typography>
           <Typography variant="body2">{currentDate}</Typography>
           <FormControl>
-            {/* <InputLabel>Time</InputLabel> */}
-            <Select>
+            <Select
+              value={time}
+              onChange={(event) => setTime(event.target.value)}
+            >
               <MenuItem value="AM">AM</MenuItem>
               <MenuItem value="PM">PM</MenuItem>
             </Select>
@@ -91,15 +127,20 @@ export const DeclarationFormA = () => {
           </div>
           <Box height={16} />
           <FormControl component="fieldset">
-            <RadioGroup name="symptoms" className={classes.row}>
+            <RadioGroup
+              name="symptoms"
+              className={classes.row}
+              value={symptoms}
+              onChange={(event) => setSymptoms(event.target.value)}
+            >
               <FormControlLabel
                 value="no"
-                control={<Radio size="small" />}
+                control={<Radio size="small" color="primary" />}
                 label="No"
               />
               <FormControlLabel
                 value="yes"
-                control={<Radio size="small" />}
+                control={<Radio size="small" color="primary" />}
                 label="Yes"
               />
             </RadioGroup>
@@ -117,22 +158,65 @@ export const DeclarationFormA = () => {
           </div>
           <Box height={16} />
           <FormControl component="fieldset">
-            <RadioGroup name="symptoms" className={classes.row}>
+            <RadioGroup
+              name="symptoms"
+              className={classes.row}
+              value={household}
+              onChange={(event) => setHousehold(event.target.value)}
+            >
               <FormControlLabel
                 value="no"
-                control={<Radio size="small" />}
+                control={<Radio size="small" color="primary" />}
                 label="No"
               />
               <FormControlLabel
                 value="yes"
-                control={<Radio size="small" />}
+                control={<Radio size="small" color="primary" />}
                 label="Yes"
               />
             </RadioGroup>
           </FormControl>
           <Box height={32} />
           <Typography variant="body2">My temperature reading is</Typography>
+          <div className={classes.row + " " + classes.margins}>
+            <Input
+              className={classes.tempValue}
+              value={
+                typeof temperature === "number"
+                  ? Number(temperature).toFixed(1)
+                  : ""
+              }
+            ></Input>
+            <MicNone className={classes.mic} />
+          </div>
+          <Slider
+            value={
+              typeof temperature === "number"
+                ? Number(temperature).toFixed(1)
+                : 36.5
+            }
+            onChange={(event, newValue) => setTemparature(newValue)}
+            min={35.0}
+            max={40.0}
+            step={0.1}
+          />
+          <Box height={8} />
+          <img
+            className={classes.swipe}
+            alt="slider"
+            src={process.env.PUBLIC_URL + "/images/icon-swipe.svg"}
+          />
+          <Box height={16} />
         </Grid>
+        <div className={classes.centered}>
+          <Button
+            variant="contained"
+            disableElevation
+            className={classes.button}
+          >
+            Submit
+          </Button>
+        </div>
       </Grid>
     </React.Fragment>
   );
