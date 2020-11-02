@@ -9,6 +9,8 @@ import {
 import { Home, Explore, Settings } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
 import { HomeButtonSectionA } from "../../components/home-button-variation/HomeButtonSectionA";
+import { useSetUser } from "../../contexts/UserState";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -29,7 +31,9 @@ const useStyles = makeStyles({
 
 export const LoginPage = () => {
   const classes = useStyles();
+  const setUser = useSetUser();
   const [participantID, setParticipantID] = useState("");
+  let history = useHistory();
   return (
     <React.Fragment>
       <Container
@@ -53,7 +57,15 @@ export const LoginPage = () => {
           />
         </form>
         <Box height={32} />
-        <Button variant="contained" disableElevation className={classes.submit}>
+        <Button
+          variant="contained"
+          disableElevation
+          className={classes.submit}
+          onClick={() => {
+            setUser(participantID);
+            history.push("/default-home-a");
+          }}
+        >
           Submit
         </Button>
       </Container>
