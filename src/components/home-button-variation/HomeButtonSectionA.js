@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const HomeButtonRowA = () => {
+export const HomeButtonSectionA = () => {
   const classes = useStyles();
   let history = useHistory();
   return (

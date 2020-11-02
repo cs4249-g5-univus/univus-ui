@@ -6,9 +6,9 @@ import {
   Typography,
 } from "@material-ui/core";
 import { Home, Explore, Settings } from "@material-ui/icons";
-import { HomeButtonRowA } from "../../components/home-button-variation/HomeButtonRowA";
+import { HomeButtonSectionB } from "../../components/home-button-variation/HomeButtonSectionB";
 
-export const HomePageA = () => {
+export const DefaultHomePageB = () => {
   return (
     <React.Fragment>
       <Container
@@ -33,11 +33,12 @@ export const HomePageA = () => {
         <Container
           style={{
             backgroundColor: "#002984",
-            height: "132px",
+            minHeight: "132px",
             borderRadius: "48px 0 0 0",
+            padding: "1rem 1rem",
           }}
         >
-          <HomeButtonRowA />
+          <HomeButtonSectionB />
         </Container>
         <Container style={{ backgroundColor: "#002984" }} disableGutters>
           <Container
