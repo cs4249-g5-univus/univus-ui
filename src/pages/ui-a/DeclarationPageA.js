@@ -11,6 +11,7 @@ import {
 import { AddBox, List, Note, Settings } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
 import { DeclarationFormA } from "../../components/declaration-ui-variation/DeclarationFormA";
+import { useUser } from "../../contexts/UserState";
 
 const useStyles = makeStyles({
   header: {
@@ -34,6 +35,7 @@ const useStyles = makeStyles({
 
 export const DeclarationPageA = () => {
   const classes = useStyles();
+  const user = useUser();
   return (
     <React.Fragment>
       <Container
@@ -53,7 +55,7 @@ export const DeclarationPageA = () => {
         </Container>
         <Container disableGutters>
           <Typography align="left" className={classes.welcome}>
-            Hi User
+            Hi Participant {user}
           </Typography>
           <Card className={classes.card}>
             <CardContent>

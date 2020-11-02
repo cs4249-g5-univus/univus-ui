@@ -7,8 +7,10 @@ import {
 } from "@material-ui/core";
 import { Home, Explore, Settings } from "@material-ui/icons";
 import { HomeButtonSectionA } from "../../components/home-button-variation/HomeButtonSectionA";
+import { useUser } from "../../contexts/UserState";
 
 export const DefaultHomePageA = () => {
+  const user = useUser();
   return (
     <React.Fragment>
       <Container
@@ -28,7 +30,7 @@ export const DefaultHomePageA = () => {
             padding: "40px 24px 0",
           }}
         >
-          <Typography align="left">Hi User,</Typography>
+          <Typography align="left">Hi Participant {user},</Typography>
         </Container>
         <Container
           style={{
