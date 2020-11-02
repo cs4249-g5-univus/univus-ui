@@ -95,7 +95,7 @@ export const DeclarationFormA = () => {
             alt="calendar"
             src={process.env.PUBLIC_URL + "/images/icon-person.svg"}
           />
-          <Box height={100} />
+          <Box height={160} />
           <img
             className={classes.icon}
             alt="calendar"
@@ -199,6 +199,13 @@ export const DeclarationFormA = () => {
             min={35.0}
             max={40.0}
             step={0.1}
+            color={
+              typeof temperature === "number"
+                ? temperature > 37.5
+                  ? "secondary"
+                  : "primary"
+                : "primary"
+            }
           />
           <Box height={8} />
           <img

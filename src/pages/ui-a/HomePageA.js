@@ -6,7 +6,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { Home, Explore, Settings } from "@material-ui/icons";
-import { BaseHomeButtonRow } from "../../components/BaseHomeButtonRow";
+import { HomeButtonRowA } from "../../components/home-button-variation/HomeButtonRowA";
 
 export const HomePageA = () => {
   return (
@@ -37,7 +37,7 @@ export const HomePageA = () => {
             borderRadius: "48px 0 0 0",
           }}
         >
-          <BaseHomeButtonRow />
+          <HomeButtonRowA />
         </Container>
         <Container style={{ backgroundColor: "#002984" }} disableGutters>
           <Container

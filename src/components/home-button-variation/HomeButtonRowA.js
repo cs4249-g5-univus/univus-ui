@@ -1,8 +1,8 @@
 import React from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
-import { BaseHomeButton } from "./BaseHomeButton";
-import { BaseHomeButtonPlaceholder } from "./BaseHomeButtonPlaceholder";
+import { HomeButtonA } from "./HomeButtonA";
+import { HomeButtonPlaceholderA } from "./HomeButtonPlaceholderA";
 import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -17,23 +17,23 @@ const useStyles = makeStyles({
   },
 });
 
-export const BaseHomeButtonRow = () => {
+export const HomeButtonRowA = () => {
   const classes = useStyles();
   let history = useHistory();
   return (
     <div className={classes.root}>
-      <BaseHomeButtonPlaceholder
+      <HomeButtonPlaceholderA
         label="Exam Results"
         imgSrc="/images/baseButton-results.jpg"
       />
-      <BaseHomeButton
+      <HomeButtonA
         label="Health Declaration"
         imgSrc="/images/baseButton-declare.jpg"
         onClick={() => {
           history.push("/declaration-a");
         }}
       />
-      <BaseHomeButtonPlaceholder
+      <HomeButtonPlaceholderA
         label="NUSafe"
         imgSrc="/images/baseButton-nusafe.jpg"
       />

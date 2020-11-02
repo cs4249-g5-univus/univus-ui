@@ -1,7 +1,6 @@
 import React from "react";
 import { Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Home } from "@material-ui/icons";
 
 const useStyles = makeStyles({
   root: {
@@ -26,7 +25,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const BaseHomeButtonPlaceholder = ({ label, imgSrc }) => {
+export const HomeButtonPlaceholderA = ({ label, imgSrc }) => {
   const classes = useStyles();
 
   return (

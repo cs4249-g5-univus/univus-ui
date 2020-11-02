@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const BaseHomeButton = ({ label, imgSrc, onClick }) => {
+export const HomeButtonA = ({ label, imgSrc, onClick }) => {
   const classes = useStyles();
 
   return (

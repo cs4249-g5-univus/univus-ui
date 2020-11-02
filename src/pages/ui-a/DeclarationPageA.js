@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import { AddBox, List, Note, Settings } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
-import { DeclarationFormA } from "../../components/DeclarationFormA";
+import { DeclarationFormA } from "../../components/declaration-ui-variation/DeclarationFormA";
 
 const useStyles = makeStyles({
   header: {
