@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/univus-ui/static/css/main.ab7136cd.chunk.css",
-    "main.js": "/univus-ui/static/js/main.72a8156d.chunk.js",
-    "main.js.map": "/univus-ui/static/js/main.72a8156d.chunk.js.map",
-    "runtime-main.js": "/univus-ui/static/js/runtime-main.08c84772.js",
-    "runtime-main.js.map": "/univus-ui/static/js/runtime-main.08c84772.js.map",
-    "static/js/2.2df1c283.chunk.js": "/univus-ui/static/js/2.2df1c283.chunk.js",
-    "static/js/2.2df1c283.chunk.js.map": "/univus-ui/static/js/2.2df1c283.chunk.js.map",
-    "static/js/3.c1a82c83.chunk.js": "/univus-ui/static/js/3.c1a82c83.chunk.js",
-    "static/js/3.c1a82c83.chunk.js.map": "/univus-ui/static/js/3.c1a82c83.chunk.js.map",
+    "main.js": "/univus-ui/static/js/main.0ee4fa9e.chunk.js",
+    "main.js.map": "/univus-ui/static/js/main.0ee4fa9e.chunk.js.map",
+    "runtime-main.js": "/univus-ui/static/js/runtime-main.66691ae0.js",
+    "runtime-main.js.map": "/univus-ui/static/js/runtime-main.66691ae0.js.map",
+    "static/js/2.684cd650.chunk.js": "/univus-ui/static/js/2.684cd650.chunk.js",
+    "static/js/2.684cd650.chunk.js.map": "/univus-ui/static/js/2.684cd650.chunk.js.map",
+    "static/js/3.253d793f.chunk.js": "/univus-ui/static/js/3.253d793f.chunk.js",
+    "static/js/3.253d793f.chunk.js.map": "/univus-ui/static/js/3.253d793f.chunk.js.map",
     "index.html": "/univus-ui/index.html",
     "static/css/main.ab7136cd.chunk.css.map": "/univus-ui/static/css/main.ab7136cd.chunk.css.map",
-    "static/js/2.2df1c283.chunk.js.LICENSE.txt": "/univus-ui/static/js/2.2df1c283.chunk.js.LICENSE.txt"
+    "static/js/2.684cd650.chunk.js.LICENSE.txt": "/univus-ui/static/js/2.684cd650.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.08c84772.js",
-    "static/js/2.2df1c283.chunk.js",
+    "static/js/runtime-main.66691ae0.js",
+    "static/js/2.684cd650.chunk.js",
     "static/css/main.ab7136cd.chunk.css",
-    "static/js/main.72a8156d.chunk.js"
+    "static/js/main.0ee4fa9e.chunk.js"
   ]
 }
