@@ -12,6 +12,7 @@ import { HomeButtonSectionA } from "../components/home-button-variation/HomeButt
 import { useUser } from "../contexts/UserState";
 import { DeclarationFormB } from "../components/declaration-ui-variation/DeclarationFormB";
 import { makeStyles } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   card: {
@@ -24,6 +25,7 @@ const useStyles = makeStyles({
 export const CombinedHomePageB = () => {
   const user = useUser();
   const classes = useStyles();
+  let history = useHistory();
   return (
     <React.Fragment>
       <Container
@@ -87,7 +89,11 @@ export const CombinedHomePageB = () => {
             </Typography>
             <Card className={classes.card}>
               <CardContent>
-                <DeclarationFormB />
+                <DeclarationFormB
+                  onSubmit={() => {
+                    history.push("/post-trial");
+                  }}
+                />
               </CardContent>
             </Card>
           </Container>

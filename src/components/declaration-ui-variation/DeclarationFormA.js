@@ -69,7 +69,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const DeclarationFormA = () => {
+export const DeclarationFormA = ({ onSubmit }) => {
   const classes = useStyles();
   const currentDate = format(new Date(), "dd/MM/yyyy, EEEE");
   const [time, setTime] = useState("");
@@ -220,6 +220,7 @@ export const DeclarationFormA = () => {
             variant="contained"
             disableElevation
             className={classes.button}
+            onClick={() => onSubmit()}
           >
             Submit
           </Button>

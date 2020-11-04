@@ -12,6 +12,7 @@ import { AddBox, List, Note, Settings } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
 import { DeclarationFormB } from "../components/declaration-ui-variation/DeclarationFormB";
 import { useUser } from "../contexts/UserState";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   header: {
@@ -36,6 +37,7 @@ const useStyles = makeStyles({
 export const DeclarationPageB = () => {
   const classes = useStyles();
   const user = useUser();
+  let history = useHistory();
   return (
     <React.Fragment>
       <Container
@@ -59,7 +61,7 @@ export const DeclarationPageB = () => {
           </Typography>
           <Card className={classes.card}>
             <CardContent>
-              <DeclarationFormB />
+              <DeclarationFormB onSubmit={() => history.push("/post-trial")} />
             </CardContent>
           </Card>
         </Container>

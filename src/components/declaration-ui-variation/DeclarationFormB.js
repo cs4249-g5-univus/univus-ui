@@ -70,7 +70,7 @@ const options = [...range(35.0, 40, 0.1), 40].map((value) => {
   );
 });
 
-export const DeclarationFormB = () => {
+export const DeclarationFormB = ({ onSubmit }) => {
   const classes = useStyles();
   const currentDate = format(new Date(), "dd/MM/yyyy, EEEE");
   const [time, setTime] = useState("");
@@ -217,6 +217,7 @@ export const DeclarationFormB = () => {
             variant="contained"
             disableElevation
             className={classes.submit}
+            onClick={() => onSubmit()}
           >
             Submit
           </Button>
