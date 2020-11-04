@@ -15,6 +15,8 @@ import {
 } from "@material-ui/core";
 import { format } from "date-fns";
 import { InfoOutlined, MicNone } from "@material-ui/icons";
+import { useUser } from "../../contexts/UserState";
+import { logEnd } from "../../logging/univuslog";
 
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
@@ -75,6 +77,7 @@ export const DeclarationFormA = ({ onSubmit }) => {
   const [symptoms, setSymptoms] = useState("");
   const [household, setHousehold] = useState("");
   const [temperature, setTemparature] = useState("");
+  const user = useUser();
 
   return (
     <React.Fragment>
