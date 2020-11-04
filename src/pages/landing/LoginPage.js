@@ -11,6 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { HomeButtonSectionA } from "../../components/home-button-variation/HomeButtonSectionA";
 import { useSetUser } from "../../contexts/UserState";
 import { useHistory } from "react-router-dom";
+import { logStart } from "../../logging/univuslog";
 
 const useStyles = makeStyles({
   root: {
@@ -63,6 +64,8 @@ export const LoginPage = () => {
           className={classes.submit}
           onClick={() => {
             setUser(participantID);
+            // TODO: Move log start to somewhere more appropriate - entry point of each UI task
+            logStart(participantID, {});
             history.push("/default-home-a");
           }}
         >
