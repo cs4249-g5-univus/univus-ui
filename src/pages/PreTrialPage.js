@@ -1,12 +1,6 @@
 import React, { useEffect } from "react";
 
-import {
-  Box,
-  Button,
-  Container,
-  TextField,
-  Typography,
-} from "@material-ui/core";
+import { Box, Button, Container, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useUser } from "../contexts/UserState";
 import { useHistory } from "react-router-dom";
@@ -42,7 +36,7 @@ export const PreTrialPage = () => {
   let history = useHistory();
 
   useEffect(() => {
-    if (user == "") {
+    if (user === "") {
       history.push("/");
     }
   });

@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { format } from "date-fns";
-import { InfoOutlined, MicNone } from "@material-ui/icons";
+import { InfoOutlined } from "@material-ui/icons";
 
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({

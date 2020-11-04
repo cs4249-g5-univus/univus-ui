@@ -6,7 +6,6 @@ import {
   FormControlLabel,
   Grid,
   Input,
-  InputLabel,
   MenuItem,
   Radio,
   RadioGroup,

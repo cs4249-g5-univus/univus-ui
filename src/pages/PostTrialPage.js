@@ -1,12 +1,6 @@
 import React, { useEffect } from "react";
 
-import {
-  Box,
-  Button,
-  Container,
-  TextField,
-  Typography,
-} from "@material-ui/core";
+import { Box, Button, Container, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useUser } from "../contexts/UserState";
 import { useHistory } from "react-router-dom";
@@ -31,8 +25,6 @@ const useStyles = makeStyles({
     color: "#ffffff",
   },
 });
-
-const UIList = ["A", "B", "C", "D", "E", "F"];
 
 export const PostTrialPage = () => {
   const classes = useStyles();
@@ -63,8 +55,12 @@ export const PostTrialPage = () => {
           disableElevation
           className={classes.submit}
           onClick={() => {
-            dispatchTrialCount({ type: "INCREMENT" });
-            history.push("/pre-trial");
+            if (trialCount === 5) {
+              history.push("/completed");
+            } else {
+              dispatchTrialCount({ type: "INCREMENT" });
+              history.push("/pre-trial");
+            }
           }}
         >
           Continue
