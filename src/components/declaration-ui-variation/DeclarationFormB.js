@@ -199,7 +199,7 @@ export const DeclarationFormB = () => {
               className={classes.tempInput}
               value={
                 typeof temperature === "number"
-                  ? Number(temperature).toFixed(1)
+                  ? Number(temperature).toFixed(1).toString()
                   : ""
               }
               onChange={(event) => {

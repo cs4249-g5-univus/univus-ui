@@ -16,6 +16,10 @@ const useStyles = makeStyles({
     position: "absolute",
     bottom: 16,
   },
+  image: {
+    height: "80%",
+    width: "auto",
+  },
 });
 
 export const HomeButtonPlaceholderB = ({ color, label, imgSrc }) => {
@@ -23,6 +27,11 @@ export const HomeButtonPlaceholderB = ({ color, label, imgSrc }) => {
 
   return (
     <Box borderRadius={8} bgcolor={color} p={2} className={classes.root}>
+      <img
+        className={classes.image}
+        src={process.env.PUBLIC_URL + imgSrc}
+        alt={label}
+      />
       <Typography align="left" className={classes.label}>
         {label}
       </Typography>

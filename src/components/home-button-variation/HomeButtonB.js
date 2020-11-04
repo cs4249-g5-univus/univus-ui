@@ -15,20 +15,29 @@ const useStyles = makeStyles({
     padding: "1rem",
   },
   label: {
-    // color: "#ffffff",
     lineHeight: "1",
     fontWeight: "700",
     position: "absolute",
     bottom: 16,
+    zIndex: 10,
+  },
+  image: {
+    height: "80%",
+    width: "auto",
   },
 });
 
-export const HomeButtonB = ({ color, label, onClick }) => {
+export const HomeButtonB = ({ color, label, imgSrc, onClick }) => {
   const classes = useStyles();
 
   return (
     <ButtonBase onClick={() => onClick()} className={classes.root}>
       <Box borderRadius={8} bgcolor={color} p={2} className={classes.box}>
+        <img
+          className={classes.image}
+          src={process.env.PUBLIC_URL + imgSrc}
+          alt={label}
+        />
         <Typography align="left" className={classes.label}>
           {label}
         </Typography>

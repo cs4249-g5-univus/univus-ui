@@ -23,13 +23,22 @@ export const HomeButtonSectionB = () => {
   let history = useHistory();
   return (
     <div className={classes.root}>
-      <HomeButtonPlaceholderB label="Exam Results" color="#ffc107" />
+      <HomeButtonPlaceholderB
+        label="Exam Results"
+        color="#ffffff"
+        imgSrc="/images/baseButton-results.jpg"
+      />
       <HomeButtonB
         label="Health Declaration"
-        color="#ffc107"
+        color="#ffffff"
         onClick={() => history.push("/declaration-b")}
+        imgSrc="/images/baseButton-declare.jpg"
       />
-      <HomeButtonPlaceholderB label="NUSafe" color="#ffc107" />
+      <HomeButtonPlaceholderB
+        label="NUSafe"
+        color="#ffffff"
+        imgSrc="/images/baseButton-nusafe.jpg"
+      />
     </div>
   );
 };
