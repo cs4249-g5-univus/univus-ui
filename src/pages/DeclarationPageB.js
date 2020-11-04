@@ -10,8 +10,8 @@ import {
 } from "@material-ui/core";
 import { AddBox, List, Note, Settings } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
-import { DeclarationFormA } from "../../components/declaration-ui-variation/DeclarationFormA";
-import { useUser } from "../../contexts/UserState";
+import { DeclarationFormB } from "../components/declaration-ui-variation/DeclarationFormB";
+import { useUser } from "../contexts/UserState";
 
 const useStyles = makeStyles({
   header: {
@@ -33,7 +33,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const DeclarationPageA = () => {
+export const DeclarationPageB = () => {
   const classes = useStyles();
   const user = useUser();
   return (
@@ -59,7 +59,7 @@ export const DeclarationPageA = () => {
           </Typography>
           <Card className={classes.card}>
             <CardContent>
-              <DeclarationFormA />
+              <DeclarationFormB />
             </CardContent>
           </Card>
         </Container>

@@ -1,29 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   BottomNavigation,
   BottomNavigationAction,
-  Card,
-  CardContent,
   Container,
   Typography,
 } from "@material-ui/core";
 import { Home, Explore, Settings } from "@material-ui/icons";
-import { HomeButtonSectionA } from "../../components/home-button-variation/HomeButtonSectionA";
-import { useUser } from "../../contexts/UserState";
-import { DeclarationFormB } from "../../components/declaration-ui-variation/DeclarationFormB";
-import { makeStyles } from "@material-ui/core/styles";
+import { HomeButtonSectionB } from "../components/home-button-variation/HomeButtonSectionB";
+import { useUser } from "../contexts/UserState";
 
-const useStyles = makeStyles({
-  card: {
-    margin: "0 1rem 1rem",
-    minHeight: "400px",
-    padding: "1rem 1rem 0",
-  },
-});
-
-export const CombinedHomePageB = () => {
-  const user = useUser();
-  const classes = useStyles();
+export const DefaultHomePageB = () => {
+  const user = useUser;
   return (
     <React.Fragment>
       <Container
@@ -48,51 +35,14 @@ export const CombinedHomePageB = () => {
         <Container
           style={{
             backgroundColor: "#002984",
-            height: "180px",
+            minHeight: "132px",
             borderRadius: "48px 0 0 0",
+            padding: "1rem 1rem",
           }}
         >
-          <Typography
-            align="left"
-            style={{
-              color: "#ffffff",
-              fontWeight: "900",
-              fontSize: "22px",
-              padding: "1rem 1rem 0",
-            }}
-          >
-            OTHER SERVICES
-          </Typography>
-          <HomeButtonSectionA hasDeclaration={false} />
+          <HomeButtonSectionB />
         </Container>
         <Container style={{ backgroundColor: "#002984" }} disableGutters>
-          <Container
-            style={{
-              backgroundColor: "#ffc107",
-              minHeight: "120px",
-              borderRadius: "48px 0 0 0",
-              padding: "0 1rem 1rem",
-            }}
-          >
-            <Typography
-              align="left"
-              style={{
-                color: "#002984",
-                fontWeight: "900",
-                fontSize: "22px",
-                padding: "1rem",
-              }}
-            >
-              TEMPERATURE DECLARATION
-            </Typography>
-            <Card className={classes.card}>
-              <CardContent>
-                <DeclarationFormB />
-              </CardContent>
-            </Card>
-          </Container>
-        </Container>
-        <Container style={{ backgroundColor: "#ffc107" }} disableGutters>
           <Container
             style={{
               backgroundColor: "#ffffff",
@@ -139,6 +89,7 @@ export const CombinedHomePageB = () => {
           style={{ bottom: "0", backgroundColor: "#fafafa" }}
           value={0}
           showLabels
+          //   onChange={(event, newValue) => setBottomIndex(newValue)}
         >
           <BottomNavigationAction label="Home" icon={<Home />} />
           <BottomNavigationAction label="Discover" icon={<Explore />} />
