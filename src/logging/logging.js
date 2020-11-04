@@ -16,19 +16,11 @@
 
 var ENABLE_NETWORK_LOGGING = true; // Controls network logging.
 var ENABLE_CONSOLE_LOGGING = true; // Controls console logging.
-var LOG_VERSION = '0.1';           // Labels every entry with version: "0.1".
 
 // These event types are intercepted for logging before jQuery handlers.
 var EVENT_TYPES_TO_LOG = {
   mousedown: true,
   keydown: true
-};
-
-// These event properties are copied to the log if present.
-var EVENT_PROPERTIES_TO_LOG = {
-  which: true,
-  pageX: true,
-  pageY: true
 };
 
 // This function is called to record some global state on each event.
@@ -120,25 +112,42 @@ function logEvent(event, customName, customInfo) {
   // By default, monitor some global state on every event.
   var infoObj = GLOBAL_STATE_TO_LOG();
   // And monitor a few interesting fields from the event, if present.
-  for (var key in EVENT_PROPERTIES_TO_LOG) {
-	if (event && key in event) {
-      infoObj[key] = event[key];
-    }
-  }
+  
+  // Ignore these event properties
+  // for (var key in EVENT_PROPERTIES_TO_LOG) {
+	// if (event && key in event) {
+  //     infoObj[key] = event[key];
+  //   }
+  // }
+
   // Let a custom event add fields to the info.
+  var participantid = '';
+  var ui = '';
+  var task = '';
+
   if (customInfo) {
     infoObj = Object.assign(infoObj, customInfo);
+    if (customInfo.info.participantid !== undefined) {
+      participantid = customInfo.info.participantid;
+    }
+    if (customInfo.info.ui !== undefined) {
+      ui = customInfo.info.ui;
+    }
+    if (customInfo.info.task !== undefined) {
+      task = customInfo.info.task;
+    }
   }
+
   var info = JSON.stringify(infoObj);
   var target = document;
   if (event) {target = elementDesc(event.target);}
   var state = window.location.hash;
 
   if (ENABLE_CONSOLE_LOGGING) {
-    console.log(uid, time, eventName, target, info, state, LOG_VERSION);
+    console.log(uid, participantid, time, ui, task, eventName, info, target, state);
   }
   if (ENABLE_NETWORK_LOGGING) {
-    sendNetworkLog(uid, time, eventName, target, info, state, LOG_VERSION);
+    sendNetworkLog(uid, participantid, time, ui, task, eventName, info, target, state);
   }
 }
 
@@ -179,26 +188,30 @@ return {
 //
 /////////////////////////////////////////////////////////////////////////////
 
-// Untitled form submission function
+// Univus logging submission function
 // submits to the google form at this URL:
-// docs.google.com/forms/d/e/1FAIpQLSeVi7T42b8B8omr0M7SkyQ7CYd7vxj8fOClowG6TejwxYkhBA/viewform
+// docs.google.com/forms/d/e/1FAIpQLSdfeH9A6tTWeS-t1U8O-LuZCxVTW78JQ_elyq-7TIddL57kog/viewform
 function sendNetworkLog(
   uid,
+  participantid,
   time,
+  ui,
+  task,
   eventname,
-  target,
   info,
-  state,
-  log_version) {
-var formid = "e/1FAIpQLSeVi7T42b8B8omr0M7SkyQ7CYd7vxj8fOClowG6TejwxYkhBA";
+  target,
+  state) {
+var formid = "e/1FAIpQLSdfeH9A6tTWeS-t1U8O-LuZCxVTW78JQ_elyq-7TIddL57kog";
 var data = {
-  "entry.52790460": uid,
-  "entry.1259403218": time,
-  "entry.1379464127": eventname,
-  "entry.1858388639": target,
-  "entry.2001274697": info,
-  "entry.1757415157": state,
-  "entry.880829050": log_version
+  "entry.982197655": uid,
+  "entry.2100837317": participantid,
+  "entry.1138675858": time,
+  "entry.1981455838": ui,
+  "entry.1377724197": task,
+  "entry.310984889": eventname,
+  "entry.373356598": info,
+  "entry.654754418": target,
+  "entry.129185061": state
 };
 var params = [];
 for (var key in data) {
@@ -208,3 +221,5 @@ for (var key in data) {
 (new Image).src = "https://docs.google.com/forms/d/" + formid +
    "/formResponse?" + params.join("&");
 }
+
+export default loggingjs;
