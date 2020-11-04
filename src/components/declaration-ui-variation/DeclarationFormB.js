@@ -9,13 +9,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { format } from "date-fns";
-<<<<<<< HEAD
 import { InfoOutlined } from "@material-ui/icons";
-=======
-import { InfoOutlined, MicNone } from "@material-ui/icons";
-import { useUser } from "../../contexts/UserState";
-import { logEnd } from "../../logging/univuslog";
->>>>>>> Log end events in declaration form A & B submit button
 
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
