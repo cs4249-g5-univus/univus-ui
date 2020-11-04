@@ -13,6 +13,7 @@ import {
   useDispatchTrialCount,
   useTrialCount,
 } from "../contexts/TrialCountState";
+import { TESTING_ORDER } from "../Constants";
 
 const useStyles = makeStyles({
   root: {
@@ -41,8 +42,31 @@ export const LoginPage = () => {
   let history = useHistory();
 
   useEffect(() => {
-    if (user != "") {
-      history.push("/default-home-a");
+    if (user !== "") {
+      const arrNum = user ? parseInt(user, 16) % 8 : 0;
+      const interfaceNumber = TESTING_ORDER[arrNum][trialCount - 1];
+      switch (interfaceNumber) {
+        case 0:
+          history.push("/interface-a");
+          break;
+        case 1:
+          history.push("/interface-b");
+          break;
+        case 2:
+          history.push("/interface-c");
+          break;
+        case 3:
+          history.push("/interface-d");
+          break;
+        case 4:
+          history.push("/interface-e");
+          break;
+        case 5:
+          history.push("/interface-f");
+          break;
+        default:
+          throw new Error(`Unknown interface number: ${interfaceNumber}`);
+      }
     }
   });
 
@@ -76,7 +100,30 @@ export const LoginPage = () => {
           onClick={() => {
             setUser(participantID);
             dispatchTrialCount({ type: "INCREMENT" });
-            history.push("/default-home-a");
+            const arrNum = participantID ? parseInt(user, 16) % 8 : 0;
+            const interfaceNumber = TESTING_ORDER[arrNum][0];
+            switch (interfaceNumber) {
+              case 0:
+                history.push("/interface-a");
+                break;
+              case 1:
+                history.push("/interface-b");
+                break;
+              case 2:
+                history.push("/interface-c");
+                break;
+              case 3:
+                history.push("/interface-d");
+                break;
+              case 4:
+                history.push("/interface-e");
+                break;
+              case 5:
+                history.push("/interface-f");
+                break;
+              default:
+                throw new Error(`Unknown interface number: ${interfaceNumber}`);
+            }
           }}
         >
           Submit
