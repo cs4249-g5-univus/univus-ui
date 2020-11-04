@@ -40,12 +40,10 @@ export const PostTrialPage = () => {
   const trialCount = useTrialCount();
   const dispatchTrialCount = useDispatchTrialCount();
 
-  const arrNum = user ? parseInt(user, 16) % 8 : 0;
-
   let history = useHistory();
 
   useEffect(() => {
-    if (user == "") {
+    if (user === "") {
       history.push("/");
     }
   });
@@ -66,7 +64,7 @@ export const PostTrialPage = () => {
           className={classes.submit}
           onClick={() => {
             dispatchTrialCount({ type: "INCREMENT" });
-            history.push("/default-home-a");
+            history.push("/pre-trial");
           }}
         >
           Continue
