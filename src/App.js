@@ -14,6 +14,7 @@ import { RouteC } from "./routes/RouteC";
 import { RouteD } from "./routes/RouteD";
 import { RouteE } from "./routes/RouteE";
 import { RouteF } from "./routes/RouteF";
+import { CompletedPage } from "./pages/CompletedPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route exact path="/" component={LoginPage} />
             <Route path="/pre-trial" component={PreTrialPage} />
             <Route path="/post-trial" component={PostTrialPage} />
+            <Route path="/completed" component={CompletedPage} />
             <Route path="/interface-a" component={RouteA} />
             <Route path="/interface-b" component={RouteB} />
             <Route path="/interface-c" component={RouteC} />
