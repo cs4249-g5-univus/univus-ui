@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import {
   Box,
@@ -40,6 +40,12 @@ export const PreTrialPage = () => {
 
   let history = useHistory();
 
+  useEffect(() => {
+    if (user == "") {
+      history.push("/");
+    }
+  });
+
   return (
     <React.Fragment>
       <Container
@@ -52,7 +58,11 @@ export const PreTrialPage = () => {
         <Box height={16} />
         <Typography>You are about to attempt Trial #{trialCount}.</Typography>
         <Box height={16} />
-        <Typography>You will be testing UI #{trialCount}.</Typography>
+        <Typography>
+          You will be testing UI - {UIList[trialCount - 1]}.
+        </Typography>
+        <Box height={16} />
+        <Typography>DO NOT REFRESH PAGE DURING TRIAL.</Typography>
         <Box height={32} />
         <Button
           variant="contained"
