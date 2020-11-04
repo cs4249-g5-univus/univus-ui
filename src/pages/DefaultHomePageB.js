@@ -10,7 +10,7 @@ import { HomeButtonSectionB } from "../components/home-button-variation/HomeButt
 import { useUser } from "../contexts/UserState";
 
 export const DefaultHomePageB = () => {
-  const user = useUser;
+  const user = useUser();
   return (
     <React.Fragment>
       <Container
@@ -89,7 +89,6 @@ export const DefaultHomePageB = () => {
           style={{ bottom: "0", backgroundColor: "#fafafa" }}
           value={0}
           showLabels
-          //   onChange={(event, newValue) => setBottomIndex(newValue)}
         >
           <BottomNavigationAction label="Home" icon={<Home />} />
           <BottomNavigationAction label="Discover" icon={<Explore />} />
