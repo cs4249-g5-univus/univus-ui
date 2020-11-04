@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -37,7 +37,7 @@ export const HomeButtonPlaceholderA = ({ label, imgSrc }) => {
           alt={label}
         />
       </Box>
-      <p className={classes.label}>{label}</p>
+      <Typography className={classes.label}>{label}</Typography>
     </div>
   );
 };
