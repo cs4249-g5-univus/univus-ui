@@ -98,10 +98,12 @@ export const LoginPage = () => {
           disableElevation
           className={classes.submit}
           onClick={() => {
-            setUser(participantID);
             dispatchTrialCount({ type: "INCREMENT" });
-            const arrNum = participantID ? parseInt(user, 16) % 8 : 0;
+            setUser(participantID);
+            const arrNum = participantID ? parseInt(participantID, 16) % 8 : 0;
+
             const interfaceNumber = TESTING_ORDER[arrNum][0];
+
             switch (interfaceNumber) {
               case 0:
                 history.push("/interface-a");
