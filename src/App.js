@@ -9,6 +9,8 @@ import { HashRouter as Router, Route } from "react-router-dom";
 import { DeclarationPageA } from "./pages/ui-a/DeclarationPageA";
 import { DeclarationPageB } from "./pages/ui-b/DeclarationPageB";
 import { UserStateProvider } from "./contexts/UserState";
+import { CombinedHomePageA } from "./pages/ui-e/CombinedHomePageA";
+import { CombinedHomePageB } from "./pages/ui-f/CombinedHomePageB";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <div className="App">
           <CssBaseline />
           <Route exact path="/" component={LoginPage} />
+          <Route path="/combined-home-a" component={CombinedHomePageA} />
+          <Route path="/combined-home-b" component={CombinedHomePageB} />
           <Route path="/default-home-a" component={DefaultHomePageA} />
           <Route path="/default-home-b" component={DefaultHomePageB} />
           <Route path="/declaration-a" component={DeclarationPageA} />

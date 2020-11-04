@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const HomeButtonSectionA = () => {
+export const HomeButtonSectionA = ({ hasDeclaration = true }) => {
   const classes = useStyles();
   let history = useHistory();
   return (
@@ -26,13 +26,16 @@ export const HomeButtonSectionA = () => {
         label="Exam Results"
         imgSrc="/images/baseButton-results.jpg"
       />
-      <HomeButtonA
-        label="Health Declaration"
-        imgSrc="/images/baseButton-declare.jpg"
-        onClick={() => {
-          history.push("/declaration-a");
-        }}
-      />
+      {hasDeclaration ? (
+        <HomeButtonA
+          label="Health Declaration"
+          imgSrc="/images/baseButton-declare.jpg"
+          onClick={() => {
+            history.push("/declaration-a");
+          }}
+        />
+      ) : null}
+
       <HomeButtonPlaceholderA
         label="NUSafe"
         imgSrc="/images/baseButton-nusafe.jpg"
