@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Button,
@@ -6,11 +6,13 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
-import { Home, Explore, Settings } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
-import { HomeButtonSectionA } from "../../components/home-button-variation/HomeButtonSectionA";
-import { useSetUser } from "../../contexts/UserState";
+import { useSetUser, useUser } from "../contexts/UserState";
 import { useHistory } from "react-router-dom";
+import {
+  useDispatchTrialCount,
+  useTrialCount,
+} from "../contexts/TrialCountState";
 
 const useStyles = makeStyles({
   root: {
@@ -31,9 +33,19 @@ const useStyles = makeStyles({
 
 export const LoginPage = () => {
   const classes = useStyles();
+  const user = useUser();
+  const trialCount = useTrialCount();
   const setUser = useSetUser();
+  const dispatchTrialCount = useDispatchTrialCount();
   const [participantID, setParticipantID] = useState("");
   let history = useHistory();
+
+  useEffect(() => {
+    if (user != "") {
+      history.push("/default-home-a");
+    }
+  });
+
   return (
     <React.Fragment>
       <Container
@@ -63,6 +75,7 @@ export const LoginPage = () => {
           className={classes.submit}
           onClick={() => {
             setUser(participantID);
+            dispatchTrialCount({ type: "INCREMENT" });
             history.push("/default-home-a");
           }}
         >
