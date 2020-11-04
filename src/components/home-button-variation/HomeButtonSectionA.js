@@ -3,7 +3,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { HomeButtonA } from "./HomeButtonA";
 import { HomeButtonPlaceholderA } from "./HomeButtonPlaceholderA";
-import { useHistory } from "react-router-dom";
+import { useHistory, useRouteMatch } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -20,6 +20,7 @@ const useStyles = makeStyles({
 export const HomeButtonSectionA = ({ hasDeclaration = true }) => {
   const classes = useStyles();
   let history = useHistory();
+  let { path } = useRouteMatch();
   return (
     <div className={classes.root}>
       <HomeButtonPlaceholderA
@@ -31,7 +32,7 @@ export const HomeButtonSectionA = ({ hasDeclaration = true }) => {
           label="Health Declaration"
           imgSrc="/images/baseButton-declare.jpg"
           onClick={() => {
-            history.push("/declaration-a");
+            history.push(`${path}/declaration`);
           }}
         />
       ) : null}
