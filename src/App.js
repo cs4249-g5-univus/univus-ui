@@ -13,6 +13,7 @@ import { CombinedHomePageA } from "./pages/ui-e/CombinedHomePageA";
 import { CombinedHomePageB } from "./pages/ui-f/CombinedHomePageB";
 import { TrialCountStateProvider } from "./contexts/TrialCountState";
 import { PreTrialPage } from "./pages/PreTrialPage";
+import { PostTrialPage } from "./pages/PostTrialPage";
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
           <div className="App">
             <CssBaseline />
             <Route exact path="/" component={LoginPage} />
-            <Route path="/pretrial" component={PreTrialPage} />
+            <Route path="/pre-trial" component={PreTrialPage} />
+            <Route path="/post-trial" component={PostTrialPage} />
             <Route path="/combined-home-a" component={CombinedHomePageA} />
             <Route path="/combined-home-b" component={CombinedHomePageB} />
             <Route path="/default-home-a" component={DefaultHomePageA} />
