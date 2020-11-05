@@ -113,27 +113,27 @@ export const LoginPage = () => {
 
             switch (interfaceNumber) {
               case 0:
-                logStart(user, "A", {});
+                logStart(participantID, "A", {});
                 history.push("/interface-a");
                 break;
               case 1:
-                logStart(user, "B", {});
+                logStart(participantID, "B", {});
                 history.push("/interface-b");
                 break;
               case 2:
-                logStart(user, "C", {});
+                logStart(participantID, "C", {});
                 history.push("/interface-c");
                 break;
               case 3:
-                logStart(user, "D", {});
+                logStart(participantID, "D", {});
                 history.push("/interface-d");
                 break;
               case 4:
-                logStart(user, "E", {});
+                logStart(participantID, "E", {});
                 history.push("/interface-e");
                 break;
               case 5:
-                logStart(user, "F", {});
+                logStart(participantID, "F", {});
                 history.push("/interface-f");
                 break;
               default:
