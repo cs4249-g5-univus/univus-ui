@@ -13,6 +13,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { DeclarationFormA } from "../components/declaration-ui-variation/DeclarationFormA";
 import { useUser } from "../contexts/UserState";
 import { useHistory } from "react-router-dom";
+import { logEnd } from "../logging/univuslog";
 
 const useStyles = makeStyles({
   header: {
@@ -63,6 +64,7 @@ export const DeclarationPageA = () => {
             <CardContent>
               <DeclarationFormA
                 onSubmit={() => {
+                  logEnd(user, "", {});
                   history.push("/post-trial");
                 }}
               />

@@ -3,13 +3,13 @@ import loggingjs from "./logging";
 // TODO: Add ui and task as params
 
 // Log the start of a task
-export const logStart = (participantID, extraInfo) => {
+export const logStart = (participantID, ui, extraInfo) => {
   loggingjs.logEvent(null, 'start', 
     {
       eventName: 'start',
       info: {
         'participantid': participantID,
-        'ui': extraInfo.ui || '',
+        'ui': ui,
         'task': extraInfo.task || '',
         ...extraInfo
       }
@@ -17,13 +17,13 @@ export const logStart = (participantID, extraInfo) => {
 };
 
 // Log the end of a task
-export const logEnd = (participantID, extraInfo) => {
+export const logEnd = (participantID, ui, extraInfo) => {
   loggingjs.logEvent(null, 'end', 
     {
       eventName: 'end',
       info: {
         'participantid': participantID,
-        'ui': extraInfo.ui || '',
+        'ui': ui,
         'task': extraInfo.task || '',
         ...extraInfo
       }

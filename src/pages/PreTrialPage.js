@@ -6,6 +6,7 @@ import { useUser } from "../contexts/UserState";
 import { useHistory } from "react-router-dom";
 import { useTrialCount } from "../contexts/TrialCountState";
 import { TESTING_ORDER, UI_LIST } from "../Constants";
+import { logStart } from "../logging/univuslog";
 
 const useStyles = makeStyles({
   root: {
@@ -64,21 +65,27 @@ export const PreTrialPage = () => {
           onClick={() => {
             switch (interfaceNumber) {
               case 0:
+                logStart(user, "A", {});
                 history.push("/interface-a");
                 break;
               case 1:
+                logStart(user, "B", {});
                 history.push("/interface-b");
                 break;
               case 2:
+                logStart(user, "C", {});
                 history.push("/interface-c");
                 break;
               case 3:
+                logStart(user, "D", {});
                 history.push("/interface-d");
                 break;
               case 4:
+                logStart(user, "E", {});
                 history.push("/interface-e");
                 break;
               case 5:
+                logStart(user, "F", {});
                 history.push("/interface-f");
                 break;
               default:

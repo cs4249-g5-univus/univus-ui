@@ -77,7 +77,6 @@ export const DeclarationFormB = ({ onSubmit }) => {
   const [symptoms, setSymptoms] = useState("");
   const [household, setHousehold] = useState("");
   const [temperature, setTemparature] = useState("");
-  const user = useUser();
 
   return (
     <React.Fragment>
