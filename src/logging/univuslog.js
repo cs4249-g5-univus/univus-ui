@@ -1,7 +1,5 @@
 import loggingjs from "./logging";
 
-// TODO: Add ui and task as params
-
 // Log the start of a task
 export const logStart = (participantID, ui, extraInfo) => {
   loggingjs.logEvent(null, 'start', 
