@@ -200,7 +200,7 @@ export const DeclarationFormB = ({ onSubmit }) => {
               value={
                 typeof temperature === "number"
                   ? Number(temperature).toFixed(1).toString()
-                  : ""
+                  : temperature
               }
               onChange={(event) => {
                 setTemparature(event.target.value);
