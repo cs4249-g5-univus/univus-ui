@@ -55,7 +55,7 @@ export const PostTrialPage = () => {
           disableElevation
           className={classes.submit}
           onClick={() => {
-            if (trialCount === 5) {
+            if (trialCount === 6) {
               history.push("/completed");
             } else {
               dispatchTrialCount({ type: "INCREMENT" });
